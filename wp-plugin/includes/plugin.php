@@ -35,7 +35,6 @@ function main_menu_page(){
         'onset-upload',
         'upload_page_preview',
         25
-
     );
 
 
@@ -47,7 +46,7 @@ function settings_page_preview(){
     echo "<h1>Настройки</h1>";
 }
 function upload_page_preview(){
-    echo "<h1>Загрузить текста</h1>"
+    echo "<h1>Загрузить текста</h1>";
 }
 
 ?>
