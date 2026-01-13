@@ -1,4 +1,7 @@
 <?php
+if ( !defined("ABSPATH")){
+    exit;
+}
 add_action("admin_menu", "main_menu_page", 25);
 
 function main_menu_page(){
@@ -11,9 +14,24 @@ function main_menu_page(){
         'data:image/svg+xml; base64, ' . base64_encode('<svg width="20" height="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 1191l512-295v591l-512 296v-592zm-512-295v591l512-296zm512-887v591l-512 296v-591zm0 591l512-295v591z"/></svg>'),
         20
     );
+
+    add_submenu_page(
+        'onset',
+        'Tests Sources Settings',
+        'Настройки',
+        'manage_options',
+        'onset-settings',
+        'settings_page_preview',
+        25
+    );
+
+
 }
 function main_page_preview(){
-    echo "Обзор";
+    echo "<h1>Обзор</h1>";
+}
+function settings_page_preview(){
+    echo "<h1>Настройки</h1>";
 }
 
 ?>
