@@ -1,3 +1,5 @@
 <?php
-echo "H";
+if(!defined("ABSPATH")){
+    exit;
+}
 ?>
