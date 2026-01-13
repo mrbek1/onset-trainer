@@ -5,5 +5,11 @@ Description: onSET Trainer — это веб-платформа для подг�
 Author: Ukam (Odilbek Madaminov)
 Version: 1.0
 */
+if (!defined("ABSPATH")){
+    exit;
+}
+include_once __DIR__ . '/includes/admin.php';
+include_once __DIR__ . "/includes/plugin.php";
+
 
 ?>
