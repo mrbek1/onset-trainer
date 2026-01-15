@@ -1,0 +1,27 @@
+Index: wp-plugin/includes/plugin.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\nif ( !defined(\"ABSPATH\")){\n    exit;\n}\nadd_action(\"admin_menu\", \"main_menu_page\", 25);\n\nfunction main_menu_page(){\n    add_menu_page(\n        'onSET Trainer',\n        'onSET',\n        'manage_options',\n        'onset',\n        'main_page_preview',\n        'data:image/svg+xml;base64,' . base64_encode(\n            '<svg width=\"20\" height=\"20\" viewBox=\"0 0 1792 1792\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M896 1191l512-295v591l-512 296v-592zm-512-295v591l512-296zm512-887v591l-512 296v-591zm0 591l512-295v591z\"/></svg>'\n        ),\n\n        20\n    );\n\n    add_submenu_page(\n        'onset',\n        'Настройки',\n        'Настройки',\n        'manage_options',\n        'onset-settings',\n        'settings_page_preview',\n        25\n    );\n    add_submenu_page(\n        'onset',\n        'Загрузить текста',\n        'Загрузить текста',\n        'manage-options',\n        'onset-upload',\n        'upload_page_preview',\n        30\n    );\n\n\n}\nfunction main_page_preview(){\n    echo \"<h1>Обзор</h1>\";\n}\nfunction settings_page_preview(){\n    echo \"<h1>Настройки</h1>\";\n}\nfunction upload_page_preview(){\n    echo \"<h1>Загрузить текста</h1>\";\n    $html = \"\n        <form enctype='multipart/form-data' method='post'>\n        <div>\n            <label for='file'>Выберите файл для загрузки тестов</label>\n            <input type='file' name='file' id='file'/>\n        </div>\n        \n        <div>\n            <button>Отправить на обработку</button>\n        </div>\n        </form>>\n    \";\n}\n\n?>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/wp-plugin/includes/plugin.php b/wp-plugin/includes/plugin.php
+--- a/wp-plugin/includes/plugin.php	(revision 31b4c24532ddb724c0d2ba30b0b09b11aaff40b7)
++++ b/wp-plugin/includes/plugin.php	(date 1768465304395)
+@@ -14,7 +14,6 @@
+         'data:image/svg+xml;base64,' . base64_encode(
+             '<svg width="20" height="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 1191l512-295v591l-512 296v-592zm-512-295v591l512-296zm512-887v591l-512 296v-591zm0 591l512-295v591z"/></svg>'
+         ),
+-
+         20
+     );
+ 
+@@ -31,7 +30,7 @@
+         'onset',
+         'Загрузить текста',
+         'Загрузить текста',
+-        'manage-options',
++        'manage_options',
+         'onset-upload',
+         'upload_page_preview',
+         30
