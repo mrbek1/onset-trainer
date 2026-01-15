@@ -31,7 +31,7 @@ function main_menu_page(){
         'onset',
         'Загрузить текста',
         'Загрузить текста',
-        'manage-options',
+        'manage_options',
         'onset-upload',
         'upload_page_preview',
         30
