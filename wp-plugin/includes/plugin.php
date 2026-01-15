@@ -34,7 +34,7 @@ function main_menu_page(){
         'manage-options',
         'onset-upload',
         'upload_page_preview',
-        25
+        30
     );
 
 
@@ -47,6 +47,18 @@ function settings_page_preview(){
 }
 function upload_page_preview(){
     echo "<h1>Загрузить текста</h1>";
+    $html = "
+        <form enctype='multipart/form-data' method='post'>
+        <div>
+            <label for='file'>Выберите файл для загрузки тестов</label>
+            <input type='file' name='file' id='file'/>
+        </div>
+        
+        <div>
+            <button>Отправить на обработку</button>
+        </div>
+        </form>>
+    ";
 }
 
 ?>
